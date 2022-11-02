@@ -1,4 +1,4 @@
-package service.implementation;
+package com.lumenspei.userloginandregistrationmodule.service.implementation;
 
 import org.springframework.stereotype.Service;
 
@@ -10,6 +10,6 @@ public class EmailValidatorServiceImpl implements Predicate<String> {
 
 //        TODO: Validate email
 
-        return false;
+        return true;
     }
 }

@@ -1,4 +1,4 @@
-package PasswordConstraint;
+package com.lumenspei.userloginandregistrationmodule.PasswordConstraint;
 
 import org.passay.*;
 
@@ -6,7 +6,6 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.Arrays;
 import java.util.List;
-import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
 public class PasswordConstraintValidator implements ConstraintValidator<ValidPassword, String> {
@@ -21,6 +20,7 @@ public class PasswordConstraintValidator implements ConstraintValidator<ValidPas
         PasswordValidator validator = new PasswordValidator(Arrays.asList(
                 new LengthRule(8, 30),
                 new UppercaseCharacterRule(1),
+                new LowercaseCharacterRule(1),
                 new DigitCharacterRule(1),
                 new SpecialCharacterRule(1),
                 new NumericalSequenceRule(3, false),

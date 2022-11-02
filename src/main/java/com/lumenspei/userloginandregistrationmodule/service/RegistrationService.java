@@ -1,7 +1,6 @@
-package service;
+package com.lumenspei.userloginandregistrationmodule.service;
 
-import entity.dto.request.RegistrationRequest;
-import org.springframework.stereotype.Service;
+import com.lumenspei.userloginandregistrationmodule.dto.request.RegistrationRequest;
 
 
 public interface RegistrationService {

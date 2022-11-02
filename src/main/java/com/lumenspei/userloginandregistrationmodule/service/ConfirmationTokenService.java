@@ -1,6 +1,6 @@
-package service;
+package com.lumenspei.userloginandregistrationmodule.service;
 
-import entity.ConfirmationToken;
+import com.lumenspei.userloginandregistrationmodule.entity.ConfirmationToken;
 
 import java.util.Optional;
 

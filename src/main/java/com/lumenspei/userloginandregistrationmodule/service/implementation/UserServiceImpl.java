@@ -1,14 +1,14 @@
-package service.implementation;
+package com.lumenspei.userloginandregistrationmodule.service.implementation;
 
-import entity.ConfirmationToken;
-import entity.User;
+import com.lumenspei.userloginandregistrationmodule.entity.ConfirmationToken;
+import com.lumenspei.userloginandregistrationmodule.entity.User;
+import com.lumenspei.userloginandregistrationmodule.repository.UserRepository;
+import com.lumenspei.userloginandregistrationmodule.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import repository.UserRepository;
-import service.UserService;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

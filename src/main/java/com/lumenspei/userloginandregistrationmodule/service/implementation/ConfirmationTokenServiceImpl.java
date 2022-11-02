@@ -1,10 +1,10 @@
-package service.implementation;
+package com.lumenspei.userloginandregistrationmodule.service.implementation;
 
-import entity.ConfirmationToken;
+import com.lumenspei.userloginandregistrationmodule.entity.ConfirmationToken;
+import com.lumenspei.userloginandregistrationmodule.repository.ConfirmationTokenRepository;
+import com.lumenspei.userloginandregistrationmodule.service.ConfirmationTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.ConfirmationTokenRepository;
-import service.ConfirmationTokenService;
 
 import java.time.LocalDateTime;
 import java.util.Optional;

@@ -1,12 +1,12 @@
-package service.implementation;
+package com.lumenspei.userloginandregistrationmodule.service.implementation;
 
-import email.EmailSender;
-import entity.ConfirmationToken;
-import entity.User;
-import entity.UserRole;
-import entity.dto.request.RegistrationRequest;
+import com.lumenspei.userloginandregistrationmodule.dto.request.RegistrationRequest;
+import com.lumenspei.userloginandregistrationmodule.email.EmailSender;
+import com.lumenspei.userloginandregistrationmodule.entity.ConfirmationToken;
+import com.lumenspei.userloginandregistrationmodule.entity.User;
+import com.lumenspei.userloginandregistrationmodule.entity.UserRole;
+import com.lumenspei.userloginandregistrationmodule.service.RegistrationService;
 import org.springframework.stereotype.Service;
-import service.RegistrationService;
 
 import java.time.LocalDateTime;
 
@@ -44,9 +44,10 @@ public class RegistrationServiceImpl implements RegistrationService {
         );
 
         String link = "http://localhost:8080/api/v1/registration/confirm?token=" + token;
-        emailSender.send(
-                request.getEmail(),
-                buildEmail(request.getFirstName(), link));
+        emailSender.send(request.getEmail(), link);
+//        emailSender.send(
+//                request.getEmail(),
+//                buildEmail(request.getFirstName(), link));
 
         return token;
     }

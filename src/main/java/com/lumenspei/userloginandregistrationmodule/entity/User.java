@@ -1,4 +1,4 @@
-package entity;
+package com.lumenspei.userloginandregistrationmodule.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,34 +19,30 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "users")
 public class User implements UserDetails {
-
-
-    @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
-            allocationSize = 1
-    )
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false, columnDefinition = "UUID default gen_random_uuid()")
     private UUID id;
+
+    @Column()
     private String firstName;
+    @Column()
     private String lastName;
+    @Column()
     private String email;
+    @Column()
     private String password;
+    @Column()
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
+    @Column()
     private Boolean locked = false;
+    @Column()
     private Boolean enabled = false;
 
-    public User(String firstName,
-                   String lastName,
-                   String email,
-                   String password,
-                   UserRole userRole) {
+    public User(String firstName, String lastName, String email, String password, UserRole userRole) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -62,21 +58,8 @@ public class User implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
     public String getUsername() {
-        return email;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
+        return null;
     }
 
     @Override

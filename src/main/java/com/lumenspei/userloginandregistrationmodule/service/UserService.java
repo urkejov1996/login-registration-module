@@ -1,8 +1,7 @@
-package service;
+package com.lumenspei.userloginandregistrationmodule.service;
 
-import entity.User;
+import com.lumenspei.userloginandregistrationmodule.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
 
 
 public interface UserService {

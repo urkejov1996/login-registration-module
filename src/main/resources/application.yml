@@ -18,16 +18,18 @@ spring:
     show-sql: true
 
   mail:
-    host: localhost
-    port: 1025
-    username: hello
-    password: hello
+    host: mail.lumenspei.com
+    port: 465
+    username: uros@lumenspei.com
+    password: Sinalko111
 
     properties:
       mail:
+        debug: true
         smtp:
           ssl:
             trust: "*"
+            enable: true
           auth: true
           starttls:
             enable: true

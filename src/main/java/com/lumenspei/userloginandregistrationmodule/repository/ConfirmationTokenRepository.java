@@ -1,6 +1,6 @@
-package repository;
+package com.lumenspei.userloginandregistrationmodule.repository;
 
-import entity.ConfirmationToken;
+import com.lumenspei.userloginandregistrationmodule.entity.ConfirmationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -17,7 +17,7 @@ public interface ConfirmationTokenRepository
         extends JpaRepository<ConfirmationToken, UUID> {
     Optional<ConfirmationToken> findByToken(String token);
 
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
     @Modifying
     @Query("UPDATE ConfirmationToken c " +
             "SET c.confirmedAt = ?2 " +

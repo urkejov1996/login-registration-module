@@ -1,4 +1,4 @@
-package PasswordConstraint;
+package com.lumenspei.userloginandregistrationmodule.PasswordConstraint;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

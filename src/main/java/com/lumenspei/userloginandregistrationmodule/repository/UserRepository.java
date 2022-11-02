@@ -1,6 +1,6 @@
-package repository;
+package com.lumenspei.userloginandregistrationmodule.repository;
 
-import entity.User;
+import com.lumenspei.userloginandregistrationmodule.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -15,9 +15,9 @@ import java.util.UUID;
 public interface UserRepository extends JpaRepository<User, UUID> {
     Optional<User> findByEmail(String email);
 
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
     @Modifying
-    @Query("UPDATE AppUser a " +
+    @Query("UPDATE User a " +
             "SET a.enabled = TRUE WHERE a.email = ?1")
     int enableUser(String email);
 }
